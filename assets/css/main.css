@@ -9,12 +9,21 @@
 
 /* Reset */
 
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
 		font-size: 100%;
 		font: inherit;
+		vertical-align: baseline;
+	}
+
+	header, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font-family: 'Quattrocento', serif;
 		vertical-align: baseline;
 	}
 
@@ -1665,8 +1674,9 @@
 
 		p.special {
 			text-transform: uppercase;
+			font-family: 'Playfair Display', serif;
 			font-size: .75rem;
-			font-weight: 300;
+			font-weight: 100;
 			margin: 0 0 .5rem 0;
 			padding: 0 0 1rem 0;
 			letter-spacing: .25rem;
@@ -2618,7 +2628,7 @@
 	}
 
 	header h2 + p {
-		font-size: 1.25rem;
+		font-size: 1.50rem;
 		margin-top: -1rem;
 	}
 
@@ -2920,7 +2930,7 @@
 			-ms-transition: opacity 1.5s ease-in-out, visibility 1.5s;
 			transition: opacity 1.5s ease-in-out, visibility 1.5s;
 			content: '';
-			background-image: url(../../images/bg.jpg);
+			background-color: #f2e9e4;
 			background-attachment: fixed;
 			background-position: center;
 			background-repeat: no-repeat;
@@ -2946,6 +2956,7 @@
 
 			}
 
+
 	#header {
 		color: #a6a6a6;
 		cursor: default;
@@ -2955,14 +2966,15 @@
 	}
 
 		#header > .logo {
-			margin: 0 0 4rem 0;
+			margin: 0 0 9rem 0;
 			padding: 0;
 		}
 
 			#header > .logo a {
-				font-size: 4rem;
-				font-weight: 700;
-				color: #FFF;
+				font-family: 'Kristi', cursive;
+				font-size: 6rem;
+				font-weight: 100;
+				color: #000000;
 				text-decoration: none;
 				line-height: 1rem;
 			}
