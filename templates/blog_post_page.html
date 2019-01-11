@@ -10,21 +10,13 @@
 		<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Cormorant+SC|Kristi" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.typekit.net/ofr1ggs.css">
-		<link rel="stylesheet" href="assets/css/index_new.css" />
+		<link rel="stylesheet" href="assets/css/blog_post_page.css" />
+		<link rel="stylesheet" href="assets/css/lightbox.css">
 
 	</head>
 	<body>
 
-
-		<!-- Header -->
-
-			<header id="header">
-				<div class="logo">The Blog Project</div>
-				<p id="first_p">My Little Blog</p>
-			</header>
-
-
-			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark ">
 				<div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
 					<ul class="navbar-nav mx-auto">
 						<li class="nav-item active">
@@ -54,14 +46,22 @@
 			</nav>
 
 
+		<!-- Header -->
+
+			<header id="header">
+				<div class="logo">The Blog Project</div>
+			</header>
+
+
 		<!-- Main -->
 			<div class="content">
-
 				<section id="main" class="wrapper style1">
 					<div class="inner">
 
-
 					<!-- One -->
+						<a href="images/pic01.jpg" class="image main" data-lightbox="mygallery">
+							<img id="main_image" src="images/pic01.jpg" alt="" />
+						</a>
 						<article class="post featured">
 							<header class="major">
 								<span class="date">April 25, 2017</span>
@@ -71,68 +71,36 @@
 								facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
 								amet nullam sed etiam veroeros.</p>
 							</header>
-							<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-							<ul class="actions special">
-								<li><a href="#" class="button large">Full Story</a></li>
-							</ul>
 						</article>
 
-
-					<!-- Two -->
-						<section id="other_posts" class="posts-container">
-							<article class="one">
-								<img id="img1" class="img" src="images/pic03.jpg"></img>
-								<div class="article_text">
-									<header class="art1">
-										<span class="article art1">April 24, 2017</span>
-										<h2 class="art1"><a href="#">Sed magna<br />
-										ipsum faucibus</a></h2>
-									</header>
-									<p class="art1">Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special art1">
-										<li id="btn"><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</div>
-							</article>
-
-							<article class="two">
-								<img id="img2" class="img" src="images/pic05.jpg"></img>
-								<div class="article_text">
-									<header class="art2">
-										<span class="article art2">April 22, 2017</span>
-										<h2 class="art2"><a href="#">Primis eget<br />
-										imperdiet lorem</a></h2>
-									</header>
-									<p class="art2">Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special art2">
-										<li id="btn"><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</div>
-							</article>
-						</section>
+						<div class="photos">
+							<div class="first_row">
+								<a href="images/pic06.jpg" data-lightbox="mygallery">
+									<img class="other_images" src="images/pic06.jpg"></img>
+								</a>
+								<a href="images/pic06.jpg" data-lightbox="mygallery">
+									<img class="other_images" src="images/pic06.jpg"></img>
+								</a>
+								<a href="images/pic06.jpg" data-lightbox="mygallery">
+									<img class="other_images" src="images/pic06.jpg"></img>
+								</a>
+							</div>
+							<div class="second_row">
+								<a href="images/pic08.jpg" data-lightbox="mygallery">
+									<img class="other_images" src="images/pic08.jpg"></img>
+								</a>
+								<a href="images/pic07.jpg" data-lightbox="mygallery">
+									<img class="other_images" src="images/pic07.jpg"></img>
+								</a>
+								<a href="images/pic07.jpg" data-lightbox="mygallery">
+									<img class="other_images" src="images/pic07.jpg"></img>
+								</a>
+							</div>
+						</div>
 
 					</div>
 				</section>
-
-
-			<!-- About -->
-				<section class="about">
-					<div class="about_me">
-						<article class="">
-							<a href="#" class="image fit"><img id="about_pic"src="images/pic04.jpg"></img></a>
-							<p id="me_text">Something about me</p>
-							<p id="me_text">Another paragraph</p>
-						</article>
-					</div>
-					<div class="highlights">
-						<article class="">
-							<p>Highlighted posts</p>
-						</article>
-					</div>
-				</section>
-
 			</div>
-
 
 		<!-- Footer -->
 			<footer id="footer">
@@ -156,6 +124,7 @@
 				<script src="assets/js/breakpoints.min.js"></script>
 				<script src="assets/js/util.js"></script>
 				<script src="assets/js/main.js"></script>
+				<script src="assets/js/lightbox.js"></script>
 
 	</body>
 </html>
