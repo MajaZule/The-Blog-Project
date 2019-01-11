@@ -1,5 +1,5 @@
 html, div, span,
-h1, h2, h3, h4, h5, h6, p, blockquote,
+h1, h3, h4, h5, h6, p, blockquote,
 strong, ol, ul, li, form, label, table,
 caption, tbody, tfoot, thead, tr, th, td, article,
 footer, menu, section {
@@ -51,15 +51,6 @@ table {
   border-spacing: 0;
 }
 
-.navbar-nav > li {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  font-size: 20px;
-  font-family: 'rift-soft', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 #header {
   width: 100%;
   text-align: center;
@@ -72,6 +63,20 @@ table {
   padding-bottom: 50px;
 }
 
+.navbar-nav > li {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  font-size: 20px;
+  font-family: 'rift-soft', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  z-index: 2;
+}
+
+nav {
+  height: 50px;
+}
+
 .content {
   margin-top: 80px;
   margin-left: 260px;
@@ -82,12 +87,16 @@ table {
 }
 
 #main {
-  width: 65%;
+  width: 898.933px;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
   display: flex;
+}
+
+.major {
+  padding-bottom: 20px;
 }
 
 .about {
@@ -141,15 +150,17 @@ table {
   color: solid black 0.5;
 }
 
-h2, .h2 {
-  font-weight: bolder;
-}
-
 .h2 {
   padding-bottom: 20px;
   padding-top: 40px;
   margin-bottom: 20px;
   font-size: 30px;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.h2 > a {
+  color: #665340;
 }
 
 .h2:after {
@@ -159,6 +170,22 @@ h2, .h2 {
     width: 50%; /* Change this to whatever width you want. */
     padding-top: 20px; /* This creates some space between the element and the border. */
     border-bottom: 1px solid black; /* This creates the border. Replace black with whatever color you want. */
+}
+
+#h2 {
+   line-height: 1.0;
+   padding-bottom: 5px;
+}
+
+.headers_all {
+   font-size: 25px;
+   color: #665340;
+   font-family: "Source Sans Pro", Helvetica, sans-serif;
+   font-weight: bold;
+}
+
+.headers_all:hover {
+  color: #665340;
 }
 
 #first_p {
@@ -184,17 +211,22 @@ p, span {
   transform:scale(0.9);
 }
 
-.img {
+.image_main {
+  display: flex;
+  object-fit: contain;
+  justify-content: center;
+}
+
+#img1, #img2 {
   display: flex;
   object-fit: cover;
-  flex: 1.5;
-  padding-right: 30px;
+  width: 400px;
+  height: 270px;
 }
 
 .article_text {
   display: flex;
   flex-direction: column;
-  flex: 2;
   padding-left: 30px;
 }
 
@@ -236,6 +268,7 @@ p, span {
 		font-size: 1rem;
 		font-weight: 900;
 		letter-spacing: 0.075em;
+    color: #dd831c;
 		height: 3rem;
 		line-height: 3rem;
 		padding: 0 2rem;
@@ -244,6 +277,12 @@ p, span {
 		text-transform: uppercase;
 		white-space: nowrap;
 	}
+
+.button:hover {
+  background: #343a40;
+  color: white;
+  transition: 0.7s;
+}
 
 #btn {
   display: flex;
@@ -254,4 +293,13 @@ li {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 30px;
+}
+
+.img {
+  transition: 0.4s;
+}
+
+.img:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
 }
