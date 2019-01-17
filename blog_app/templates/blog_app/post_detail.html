@@ -1,0 +1,63 @@
+{% extends 'blog_app/base.html' %}
+
+
+{% block navbar %}
+{% endblock %}
+
+
+{% block header %}
+{% endblock %}
+
+
+{% block content %}
+
+	<div class="content">
+		<section id="main" class="wrapper style1">
+			<div class="inner">
+
+
+				<a href="images/pic01.jpg" class="image main" data-lightbox="mygallery">
+					<img id="main_image" src="images/pic01.jpg" alt="" />
+				</a>
+				<article class="post featured">
+					<header class="major">
+						<span class="date">{{ post.published_date }}</span>
+						<h2 class="h2"><a href="#">{{ post.title }}</a></h2>
+						<p>{{ post.content }}</p>
+					</header>
+				</article>
+
+
+			{% block gallery %}
+				<div class="photos">
+					<div class="first_row">
+						<a href="images/pic06.jpg" data-lightbox="mygallery">
+							<img class="other_images" src="images/pic06.jpg"></img>
+						</a>
+						<a href="images/pic06.jpg" data-lightbox="mygallery">
+							<img class="other_images" src="images/pic06.jpg"></img>
+						</a>
+						<a href="images/pic06.jpg" data-lightbox="mygallery">
+							<img class="other_images" src="images/pic06.jpg"></img>
+						</a>
+					</div>
+					<div class="second_row">
+						<a href="images/pic08.jpg" data-lightbox="mygallery">
+							<img class="other_images" src="images/pic08.jpg"></img>
+						</a>
+						<a href="images/pic07.jpg" data-lightbox="mygallery">
+							<img class="other_images" src="images/pic07.jpg"></img>
+						</a>
+						<a href="images/pic07.jpg" data-lightbox="mygallery">
+							<img class="other_images" src="images/pic07.jpg"></img>
+						</a>
+					</div>
+				</div>
+			{% endblock %}
+
+
+			</div>
+		</section>
+	</div>
+
+{% endblock %}

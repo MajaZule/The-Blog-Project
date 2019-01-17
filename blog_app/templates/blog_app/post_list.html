@@ -1,0 +1,82 @@
+{% extends 'blog_app/base.html' %}
+
+
+{% block content %}
+
+<!-- Main -->
+	<div class="content">
+
+		<section id="main" class="wrapper style1">
+			<div class="inner">
+
+
+			{% for post in post_list %}
+				{% if post|first %}
+					<article class="post featured">
+						<header class="major">
+							<span class="date">{{ post.published_date|date:"D M Y" }}</span>
+							<h2 class="h2"><a href="">{{ post.title }}</a></h2>
+							<p>{{ post.content|truncatewords:100 }}</p>
+						</header>
+						<a href="static/blog_app/images/pic01.jpg" class="image_main" data-lightbox="mygallery">
+							<img class="images img" src="static/blog_app/images/pic01.jpg" alt=""></img>
+						</a>
+						<ul class="actions special">
+							<li><a href="" class="button large">Full Story</a></li>
+						</ul>
+					</article>
+				{% endif %}
+
+
+				{% if foorloop.counter != 1 %}
+				  <h1>{{post.pk}}</h1>
+					<section id="other_posts" class="posts-container">
+						<article class="one">
+							<a href="static/blog_app/images/pic03.jpg" class="image_not_main" data-lightbox="mygallery">
+								<img id="img1" class="img" src="static/blog_app/images/pic03.jpg"></img>
+							</a>
+							<div class="article_text">
+								<header class="art1 header">
+									<span class="article art1">{{ post.published_date|date:"D M Y" }}</span>
+									-<h2 id="h2" class="art1"><a class="headers_all" href="">{{ post.title }}</a></h2>
+								</header>
+								<p class="art1">{{ post.text|truncatewords:30 }}</p>
+								<ul class="actions special art1">
+									-<li id="btn"><a href="" class="button">Full Story</a></li>
+								</ul>
+							</div>
+						</article>
+					</section>
+				{% endif %}
+
+			{% endfor %}
+
+			</div>
+		</section>
+
+
+	<!-- About -->
+		<section class="about">
+			<div class="about_me">
+				<article class="">
+					<a href="#" class="image fit"><img id="about_pic" src="static/blog_app/images/pic04.jpg"></img></a>
+					<p id="me_text">Something about me</p>
+					<p id="me_text">Another paragraph</p>
+				</article>
+			</div>
+			<div class="highlights">
+				<article class="">
+					<p>Highlighted posts</p>
+				</article>
+			</div>
+		</section>
+
+	</div>
+
+
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="img01">
+	</div>
+
+{% endblock %}
