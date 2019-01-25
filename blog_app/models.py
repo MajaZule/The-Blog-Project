@@ -7,6 +7,8 @@ class Post(models.Model):
     title = models.CharField(max_length = 400)
     text = models.TextField()
     published_date = models.DateTimeField(blank = True, null = True)
+    #u have to install Pillow first to have imagefield
+    image = models.ImageField(upload_to = 'images', blank = True)
 
     def publish(self):
         self.published_date = timezone.now
@@ -16,7 +18,7 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('post_detail', kwargs={'pk':self.pk})
+        return reverse('post_list', kwargs={'pk':self.pk})
 
 
 class Comment(models.Model):
@@ -29,4 +31,4 @@ class Comment(models.Model):
         return self.text
 
     def get_absolute_url(self):
-        return reverse('post_list')
+        return reverse('post_detail')

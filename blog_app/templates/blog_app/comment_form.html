@@ -1,0 +1,12 @@
+{% extends 'blog_app/base_detail.html' %}
+{% load staticfiles %}
+
+{% block form %}
+  <div id="comments">
+    <form class="post-form" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="save btn btn-default">Post Comment</button>
+    </form>
+  </div>
+{% endblock %}

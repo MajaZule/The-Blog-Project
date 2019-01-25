@@ -1,12 +1,5 @@
-{% extends 'blog_app/base.html' %}
-
-
-{% block navbar %}
-{% endblock %}
-
-
-{% block header %}
-{% endblock %}
+{% extends 'blog_app/base_detail.html' %}
+{% load staticfiles %}
 
 
 {% block content %}
@@ -23,12 +16,27 @@
 					<header class="major">
 						<span class="date">{{ post.published_date }}</span>
 						<h2 class="h2"><a href="#">{{ post.title }}</a></h2>
-						<p>{{ post.content }}</p>
+						<p>{{ post.text }}</p>
 					</header>
 				</article>
 
+				{% block comments %}
 
-			{% block gallery %}
+					{% for comment in post.comment.all %}
+						<p>{{ comment.published_date }}</p>
+						<p>{{ comment.text }}</p>
+						<p>{{ comment.author }}</p>
+					{% empty %}
+						<p>No comments yet.</p>
+					{% endfor %}
+
+					{% block form %}
+						<div data-include="comment_form.html"></div>
+					{% endblock %}
+
+				{% endblock %}
+
+				{% block gallery %}
 				<div class="photos">
 					<div class="first_row">
 						<a href="images/pic06.jpg" data-lightbox="mygallery">
@@ -53,7 +61,7 @@
 						</a>
 					</div>
 				</div>
-			{% endblock %}
+				{% endblock %}
 
 
 			</div>
