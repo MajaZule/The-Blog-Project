@@ -25,8 +25,12 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
-        context['gallery'] = Gallery.objects.all()
+        context['gallery'] = Gallery.objects.filter(post=self.kwargs['pk'])
         return context
+
+
+class GalleryListView(ListView):
+    model = Gallery
 
 
 def add_comment(request, pk):
