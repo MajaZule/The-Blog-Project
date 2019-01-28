@@ -19,7 +19,7 @@
 
 				{% block comments %}
 
-					{% for comment in post.comment.all %}
+					{% for comment in post.comments.all %}
 						<p>{{ comment.published_date }}</p>
 						<p>{{ comment.text }}</p>
 						<p>{{ comment.author }}</p>
@@ -28,7 +28,11 @@
 					{% endfor %}
 
 					{% block form %}
-						<div data-include="comment_form.html"></div>
+					  <form class="post-form" action="comment/" method="POST">
+					    {% csrf_token %}
+					    {{ form.as_p }}
+					    <button type="submit" class="save btn btn-default">Post Comment</button>
+					  </form>
 					{% endblock %}
 
 				{% endblock %}

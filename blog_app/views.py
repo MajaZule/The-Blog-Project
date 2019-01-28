@@ -26,6 +26,7 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         context['gallery'] = Gallery.objects.filter(post=self.kwargs['pk'])
+        context['form'] = CommentForm()
         return context
 
 
@@ -36,12 +37,14 @@ class GalleryListView(ListView):
 def add_comment(request, pk):
     post = get_object_or_404(Post, pk = pk)
 
-    if request.method == 'post':
+    if request.method == 'POST':
+        print("Adding comment to post " + str(pk))
         form = CommentForm(request.POST)
         if form.is_valid():
-            comment = form.save(commit=True)
+            comment = Comment()
             comment.post = post
-            comment.published_date = timezone.now
+            comment.author = form.cleaned_data['author']
+            comment.text = form.cleaned_data['text']
             comment.save()
             return redirect('post_detail', pk=post.pk)
     else:
