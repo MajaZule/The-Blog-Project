@@ -32,3 +32,11 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail')
+
+
+class Gallery(models.Model):
+    post = models.ForeignKey('blog_app.Post', related_name='gallery', on_delete=models.CASCADE)
+    photos = models.ImageField(upload_to = 'images', blank = True)
+
+    def get_absolute_url(self):
+        return reverse('post_detail')
