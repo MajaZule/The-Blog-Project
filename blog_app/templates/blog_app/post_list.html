@@ -1,5 +1,4 @@
 {% extends 'blog_app/base.html' %}
-{% load staticfiles %}
 
 
 {% block content %}
@@ -42,7 +41,7 @@
 								</header>
 								<p class="art1">{{ post.text|truncatewords:30 }}</p>
 								<ul class="actions special art1">
-									-<li id="btn"><a href="{% url 'post_detail' pk=post.pk %}" class="button">Full Story</a></li>
+									<li id="btn"><a href="{% url 'post_detail' pk=post.pk %}" class="button">Full Story</a></li>
 								</ul>
 							</div>
 						</article>

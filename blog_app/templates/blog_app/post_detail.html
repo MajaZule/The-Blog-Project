@@ -1,5 +1,4 @@
 {% extends 'blog_app/base_detail.html' %}
-{% load staticfiles %}
 
 
 {% block content %}
@@ -38,15 +37,12 @@
 				{% endblock %}
 
 				{% block gallery %}
-
 					<div class="photos">
-
 						{% for photo in gallery %}
 							<a href="{{ photo.photos.url }}" data-lightbox="mygallery">
 								<img class="other_images" src="{{ photo.photos.url }}"></img>
 							</a>
 						{% endfor %}
-
 					</div>
 				{% endblock %}
 
