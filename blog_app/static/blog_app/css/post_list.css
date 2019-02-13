@@ -26,6 +26,12 @@ html, body {
   line-height: 3.5rem;
 }
 
+nav {
+  height: 50px;
+  position: sticky;
+  z-index: 3;
+}
+
 .navbar-nav > li {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
@@ -33,11 +39,6 @@ html, body {
   font-family: 'rift-soft', sans-serif;
   font-weight: 400;
   font-style: normal;
-  z-index: 2;
-}
-
-nav {
-  height: 50px;
 }
 
 nav .nav-link {
