@@ -2,8 +2,6 @@
 /* HTML, BODY, HEADER AND NAVBAR */
 
 html, body {
-  height: 100%;
-  width: 100%;
   background-color: #f2e9e4;
   display: block;
   font-size: 130%;
@@ -28,8 +26,6 @@ html, body {
 
 nav {
   height: 50px;
-  position: sticky;
-  z-index: 3;
 }
 
 .navbar-nav > li {
