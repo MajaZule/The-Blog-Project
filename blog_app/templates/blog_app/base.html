@@ -6,11 +6,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+
 		<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Playfair+Display" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Cormorant+SC|Kristi" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.typekit.net/ofr1ggs.css">
+		<link rel="stylesheet" href="{% static 'blog_app/css/font-awesome.min.css' %}">
 		<link rel="stylesheet" href="{% static 'blog_app/css/post_list.css' %}">
 		<link rel="stylesheet" href="{% static 'blog_app/css/lightbox.css' %}">
 
@@ -19,80 +24,59 @@
 
 
 		<!-- Header -->
-			{% block header %}
-  			<header id="header">
-  				<div class="logo">The Blog Project</div>
-  				<p id="first_p">My Little Blog</p>
-  			</header>
-			{% endblock %}
+		{% block header %}
+		{% endblock %}
 
+		{% block navbar %}
+			<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  				<span class="navbar-toggler-icon"></span>
+			  </button>
+				<div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
+					<ul class="navbar-nav mx-auto mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Left</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Link</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Link</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Link</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		{% endblock %}
 
-			{% block navbar %}
-  			<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
-  				<div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-  					<ul class="navbar-nav mx-auto">
-  						<li class="nav-item active">
-  							<a class="nav-link" href="#">Left</a>
-  						</li>
-  						<li class="nav-item">
-  							<a class="nav-link" href="#">Link</a>
-  						</li>
-  						<li class="nav-item">
-  							<a class="nav-link" href="#">Link</a>
-  						</li>
-  						<li class="nav-item">
-  							<a class="nav-link" href="#">Link</a>
-  						</li>
-  					</ul>
-  				</div>
-  				<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-  					<ul class="navbar-nav mx-auto">
-  						<li class="nav-item">
-  							<a class="nav-link" href="#">Right</a>
-  						</li>
-  						<li class="nav-item">
-  							<a class="nav-link" href="#">Link</a>
-  						</li>
-  					</ul>
-  				</div>
-  			</nav>
-			{% endblock %}
+		{% block small_header %}
+		{% endblock %}
 
 
 		<!-- Main -->
-      {% block content %}
-      {% endblock %}
+    {% block content %}
 
+			{% block comments %}
+			{% endblock %}
 
 			{% block gallery %}
 			{% endblock %}
 
-		<!-- Footer -->
-      {% block footer %}
-  			<footer id="footer">
-  				<div class="container">
-  					<a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a>
-  					<a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a>
-  					<a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a>
-  					<a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a>
-  				</div>
-  				<div class="copyright">
-  					&copy; Untitled. All rights reserved. Images <a href="https://unsplash.com">Unsplash</a> Design <a href="https://templated.co">TEMPLATED</a>
-  				</div>
-  			</footer>
-      {% endblock %}
+		{% endblock %}
 
 
-			<!-- Scripts -->
-			<script src="{% static 'blog_app/js/jquery.min.js' %}"></script>
-			<script src="{% static 'blog_app/js/jquery.scrollex.min.js' %}"></script>
-			<script src="{% static 'blog_app/js/jquery.scrolly.min.js' %}"></script>
-			<script src="{% static 'blog_app/js/browser.min.js' %}"></script>
-			<script src="{% static 'blog_app/js/breakpoints.min.js' %}"></script>
-			<script src="{% static 'blog_app/js/util.js' %}"></script>
-			<script src="{% static 'blog_app/js/main.js' %}"></script>
-			<script src="{% static 'blog_app/js/new.js' %}"></script>
-			<script src="{% static 'blog_app/js/lightbox.js' %}"></script>
+		<!-- Scripts -->
+		<script src="{% static 'blog_app/js/jquery.min.js' %}"></script>
+		<script src="{% static 'blog_app/js/jquery.scrollex.min.js' %}"></script>
+		<script src="{% static 'blog_app/js/jquery.scrolly.min.js' %}"></script>
+		<script src="{% static 'blog_app/js/browser.min.js' %}"></script>
+		<script src="{% static 'blog_app/js/breakpoints.min.js' %}"></script>
+		<script src="{% static 'blog_app/js/util.js' %}"></script>
+		<script src="{% static 'blog_app/js/main.js' %}"></script>
+		<script src="{% static 'blog_app/js/new.js' %}"></script>
+		<script src="{% static 'blog_app/js/lightbox.js' %}"></script>
 
 	</body>
 </html>

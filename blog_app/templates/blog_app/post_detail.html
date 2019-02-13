@@ -1,53 +1,65 @@
-{% extends 'blog_app/base_detail.html' %}
+{% extends 'blog_app/base.html' %}
+
+
+{% block small_header %}
+	<header id="header">
+		<div class="logo">The Blog Project</div>
+	</header>
+{% endblock %}
 
 
 {% block content %}
 
-	<div class="content">
-		<section id="main" class="wrapper style1">
-			<div class="inner">
+	<div class="content content-detailed col-xs-12 col-sm-12 col-md-10 col-lg-9 col-xl-7">
+		<section class="main">
 
-
-				<article class="post featured">
-					<header class="major">
-						<span class="date">{{ post.published_date }}</span>
-						<h2 class="h2"><a href="#">{{ post.title }}</a></h2>
+				<article class="post-featured post-detailed">
+					<header>
+						<span class="date">{{ post.published_date|date:"D d M Y" }}</span>
+						<h2><a href="#">{{ post.title }}</a></h2>
 						<p>{{ post.text }}</p>
 					</header>
+					<hr>
+					<hr>
 				</article>
 
 				{% block comments %}
-
-					{% for comment in post.comments.all %}
-						<p>{{ comment.published_date }}</p>
-						<p>{{ comment.text }}</p>
-						<p>{{ comment.author }}</p>
-					{% empty %}
-						<p>No comments yet.</p>
-					{% endfor %}
-
-					{% block form %}
-					  <form class="post-form" action="comment/" method="POST">
-					    {% csrf_token %}
-					    {{ form.as_p }}
-					    <button type="submit" class="save btn btn-default">Post Comment</button>
-					  </form>
-					{% endblock %}
-
+					<div class="comments">
+						<div class="comments-all col-12">
+							{% for comment in post.comments.all %}
+								<p>{{ comment.published_date }}</p>
+								<p>{{ comment.text }}</p>
+								<p>{{ comment.author }}</p>
+							{% empty %}
+								<p>No comments yet.</p>
+							{% endfor %}
+						</div>
+						<div class="comment-form col-xs-12 col-sm-6 col-md-6 col-lg-5 col-xl-5">
+							{% block form %}
+							  <form class="post-form" action="comment/" method="POST">
+							    {% csrf_token %}
+							    {{ form.as_p }}
+							    <button type="submit" class="button save btn btn-default">Post Comment</button>
+							  </form>
+							{% endblock %}
+						</div>
+						<hr>
+						<hr>
+					</div>
 				{% endblock %}
 
 				{% block gallery %}
 					<div class="photos">
-						{% for photo in gallery %}
-							<a href="{{ photo.photos.url }}" data-lightbox="mygallery">
-								<img class="other_images" src="{{ photo.photos.url }}"></img>
-							</a>
-						{% endfor %}
+						<div class="row">
+							{% for photo in gallery %}
+								<a class="gallery col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4" href="{{ photo.photos.url }}" data-lightbox="mygallery">
+									<img class="img-fluid" src="{{ photo.photos.url }}"></img>
+								</a>
+							{% endfor %}
+						</div>
 					</div>
 				{% endblock %}
 
-
-			</div>
 		</section>
 	</div>
 

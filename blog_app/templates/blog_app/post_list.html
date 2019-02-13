@@ -1,75 +1,93 @@
 {% extends 'blog_app/base.html' %}
 
 
+{% block header %}
+	<header id="header">
+		<div class="logo">The Blog Project</div>
+	</header>
+{% endblock %}
+
+
 {% block content %}
 
 <!-- Main -->
-	<div class="content">
+	<div class="content d-flex justify-content-center flex-wrap col-12">
+		<div class="row">
 
-		<section id="main" class="wrapper style1">
-			<div class="inner">
+			<section class="main col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+				<div class="inner">
 
-
-			{% for post in post_list %}
-				{% if forloop.counter == 1 %}
-					<article class="post featured">
-						<header class="major">
-							<span class="date">{{ post.published_date|date:"D M Y" }}</span>
-							<h2 class="h2"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-							<p>{{ post.text|truncatewords:100 }}</p>
-						</header>
-						<a href="{{ post.image.url }}" class="image_main" data-lightbox="mygallery">
-							<img class="images img" src="{{ post.image.url }}" alt=""></img>
-						</a>
-						<ul class="actions special">
-							<li><a href="{% url 'post_detail' pk=post.pk %}" class="button large">Full Story</a></li>
-						</ul>
-					</article>
-				{% endif %}
-
-
-				{% if forloop.counter != 1 %}
-					<section id="other_posts" class="posts-container">
-						<article class="one">
-							<a href="{{ post.image.url }}" class="image_not_main" data-lightbox="mygallery">
-								<img id="img1" class="img" src="{{ post.image.url }}"></img>
+				{% for post in post_list %}
+					{% if forloop.counter == 1 %}
+						<article class="post-featured">
+							<header>
+								<span class="date">{{ post.published_date|date:"d M Y" }}</span>
+								<h2 class="featured-h2">
+									<a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+								</h2>
+								<hr class="featured-hr">
+								<p>{{ post.text|truncatewords:100 }}</p>
+							</header>
+							<a href="{{ post.image.url }}" class="image-main" data-lightbox="mygallery">
+								<img class="img-fluid" src="{{ post.image.url }}" alt=""></img>
 							</a>
-							<div class="article_text">
-								<header class="art1 header">
-									<span class="article art1">{{ post.published_date|date:"D M Y" }}</span>
-									<h2 id="h2" class="art1"><a class="headers_all" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-								</header>
-								<p class="art1">{{ post.text|truncatewords:30 }}</p>
-								<ul class="actions special art1">
-									<li id="btn"><a href="{% url 'post_detail' pk=post.pk %}" class="button">Full Story</a></li>
-								</ul>
+							<a href="{% url 'post_detail' pk=post.pk %}" class="button large">Full Story</a>
+						</article>
+					{% endif %}
+
+
+					{% if forloop.counter != 1 %}
+						<article class="other-posts">
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 col-xl-6">
+									<a href="{{ post.image.url }}" class="image-not-main" data-lightbox="mygallery">
+										<img class="img-fluid" src="{{ post.image.url }}"></img>
+									</a>
+								</div>
+								<div class="article-text col-xs-12 col-sm-12 col-md-6 col-lg-5 col-xl-5">
+									<header class="header">
+										<span class="article">{{ post.published_date|date:"d M Y" }}</span>
+										<h2>
+											<a class="minor-titles" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+										</h2>
+										<p>{{ post.text|truncatewords:50 }}</p>
+									</header>
+									<a href="{% url 'post_detail' pk=post.pk %}" class="button">Full Story</a>
+								</div>
 							</div>
 						</article>
-					</section>
-				{% endif %}
 
-			{% endfor %}
+					{% endif %}
 
-			</div>
-		</section>
+				{% endfor %}
 
+				</div>
+			</section>
+		<hr>
 
-	<!-- About -->
-		<section class="about">
-			<div class="about_me">
-				<article class="">
-					<a href="#" class="image fit"><img id="about_pic" src="static/blog_app/images/pic04.jpg"></img></a>
-					<p id="me_text">Something about me</p>
-					<p id="me_text">Another paragraph</p>
-				</article>
-			</div>
-			<div class="highlights">
-				<article class="">
-					<p>Highlighted posts</p>
-				</article>
-			</div>
-		</section>
+		<!-- About -->
+			<section class="about col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+				<div class="about-me">
+					<article>
+						<a href="#" class="me-image fit">
+							<img class="img-fluid" src="static/blog_app/images/pic04.jpg"></img>
+						</a>
+						<p>Something about me. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Another paragraph</p>
+  					<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+  					<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					</article>
+				</div>
+			<hr>
 
+				<div class="highlights">
+					<article class="">
+						<p>Highlighted posts. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</article>
+				</div>
+			</section>
+
+		</div>
 	</div>
 
 
