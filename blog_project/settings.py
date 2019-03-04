@@ -25,9 +25,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = '#6fen+(fpl-=zbjay2_%jw49co&^z0cowh%oecwn0xcq6!%9+('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*.amazonaws.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
