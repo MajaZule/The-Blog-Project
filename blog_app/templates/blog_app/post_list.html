@@ -29,7 +29,7 @@
 									<a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
 								</h2>
 								<hr class="featured-hr">
-								<p>{{ post.text|truncatewords:100 }}</p>
+								<p>{{ post.text|linebreaksbr|truncatewords:100 }}</p>
 							</header>
 							<a href="{{ post.image.url }}" class="image-main" data-lightbox="mygallery">
 								<img class="img-fluid" src="{{ post.image.url }}" alt=""></img>

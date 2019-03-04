@@ -71,6 +71,11 @@ nav .nav-link {
   padding-bottom: 5rem;
 }
 
+.post-detailed h2 {
+  padding-top: .5rem;
+  padding-bottom: 1.5rem;
+}
+
 .post-detailed {
   padding-bottom: 2rem;
 }
@@ -425,6 +430,10 @@ h2 a:hover {
   nav .nav-link {
     color: rgba(255, 255, 255, 0.75) !important;
   }
+  .post-featured header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
   hr {
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -589,6 +598,10 @@ h2 a:hover {
   }
   .post-featured {
     padding-top: 2rem;
+  }
+  .post-featured header {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
   }
   .article-text {
     margin-left: 30px;
