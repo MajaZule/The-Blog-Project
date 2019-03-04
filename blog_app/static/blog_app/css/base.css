@@ -15,14 +15,22 @@ html, body {
   text-align: center;
   font-family: 'liebegerda', sans-serif;
   font-weight: 400;
-  font-size: 70px;
+  font-size: 80px;
   color: white;
   background-image: url("IMG_0103.jpg");
   background-position: center;
   opacity: 0.9;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
   line-height: 3.5rem;
+}
+
+#header p {
+  font-size: 30px;
+}
+
+.logo-small {
+  padding-bottom: 2rem;
 }
 
 nav {
@@ -32,9 +40,8 @@ nav {
 .navbar-nav > li {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
-  font-size: 20px;
-  font-family: 'rift-soft', sans-serif;
-  font-weight: 400;
+  font-size: 22px;
+  font-family: 'Amatic SC', cursive;
   font-style: normal;
 }
 
@@ -130,7 +137,7 @@ textarea {
 
 h2 a {
   font-size: 30px;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: 'Amatic SC', cursive;
   font-weight: bold;
   color: #665340;
 }
@@ -202,6 +209,32 @@ hr {
   margin-bottom: 2rem;
 }
 
+.about-author {
+  padding: 2rem;
+}
+
+h4 {
+  padding-bottom: 1.5rem;
+  text-align: right;
+  font-weight: bold;
+  padding-right: 2rem;
+  border-bottom: 1px solid gray;
+  margin-bottom: 2.5rem;
+}
+
+h5 {
+  font-size: 25px;
+  padding-top: 1rem;
+  padding-left: 3rem;
+}
+
+h6 {
+  font-size: 40px;
+  font-family: 'liebegerda', sans-serif;
+  padding-left: 4rem;
+  padding-top: .5rem;
+}
+
 
 /* GALLERY */
 
@@ -231,7 +264,7 @@ hr {
   box-sizing: border-box;
  	font-family: "Source Sans Pro", Helvetica, sans-serif;
  	font-size: 16px;
- 	font-weight: 900;
+ 	font-weight: 600;
  	letter-spacing: 0.075em;
   color: #dd831c;
  	text-align: center;
@@ -255,13 +288,10 @@ hr {
   padding: 0;
 }
 
-img {
-  transition: 0.4s;
-}
-
 img:hover {
   opacity: 0.9;
   transform: scale(1.03);
+  transition: 0.4s;
 }
 
 .about-me .fa {
@@ -289,7 +319,7 @@ span {
 }
 
 .featured-h2 {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .minor-titles {
@@ -297,7 +327,7 @@ span {
 }
 
 .header h2 {
-  line-height: 24px;
+  line-height: 30px;
 }
 
 h2 a:hover {
@@ -311,6 +341,10 @@ h2 a:hover {
 
   #header {
     font-size: 100px;
+    padding-bottom: 1rem;
+  }
+  #header p {
+    font-size: 32px;
   }
   .featured-hr {
     margin-top: 1rem;
@@ -348,7 +382,7 @@ h2 a:hover {
     font-size: 16px;
   }
   .featured-h2 {
-    font-size: 26px;
+    font-size: 30px;
   }
   .minor-titles {
     font-size: 25px;
@@ -381,9 +415,12 @@ h2 a:hover {
 @media (min-width: 768px) {
   #header {
     padding-top: 4rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     padding-left: 7rem;
     z-index: 1;
+  }
+  .logo-small {
+    padding-bottom: 3.5rem;
   }
   nav .nav-link {
     color: rgba(255, 255, 255, 0.75) !important;
@@ -429,6 +466,10 @@ h2 a:hover {
     padding-left: 0;
     padding-right: 0;
   }
+  .about-me article {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
   .highlights {
     margin-top: 6rem;
   }
@@ -436,15 +477,15 @@ h2 a:hover {
     font-size: 15px;
   }
   h2 a {
-    font-size: 28px;
+    font-size: 35px;
   }
   p {
     font-size: 16px;
   }
   .main, .about div {
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
   }
   .comments hr {
     width: 0%;
@@ -500,7 +541,7 @@ h2 a:hover {
     font-size: 15px;
   }
   h2 a {
-    font-size: 28px;
+    font-size: 35px;
   }
   .about {
     padding-left: 2rem;
@@ -535,7 +576,10 @@ h2 a:hover {
 
   #header {
     padding-top: 5rem;
-    padding-bottom: 4rem;
+    padding-bottom: 2.5rem;
+  }
+  .logo-small {
+    padding-bottom: 4.5rem;
   }
   .content {
     width: 90%;
@@ -554,7 +598,7 @@ h2 a:hover {
     font-size: 15px;
   }
   h2 a {
-    font-size: 30px;
+    font-size: 35px;
   }
   .content-detailed {
     margin: auto;
@@ -591,13 +635,6 @@ h2 a:hover {
  }
  .minor-titles {
    font-size: 28px;
- }
- a.button {
-   height: 2rem;
-   width: 7rem;
-   font-size: .9rem;
-   padding: 0;
-   line-height: 2rem;
  }
  span {
    font-size: 15px;

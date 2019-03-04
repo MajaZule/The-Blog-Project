@@ -6,9 +6,12 @@ from blog_app.forms import CommentForm
 from django.http import HttpResponse
 
 
+class AboutBlogView(TemplateView):
+    template_name = 'blog_app/about_blog.html'
+    
 
 class AboutView(TemplateView):
-    template_name = 'about.html'
+    template_name = 'blog_app/about.html'
 
 
 class PostListView(ListView):
